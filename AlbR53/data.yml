@@ -1,20 +1,436 @@
 ---
 redirects:
+  # cord.bible > illuminations.bible
   -
-    source: "http://example.com"
-    target: "https://example.com"
-    cert: "arn:asdfasdfasdf"
-    comment: "redirect to https"
+    source: "https://cord.bible/"
+    target: "https://illuminations.bible/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
   -
-    source: "http://example.com"
-    target: "http://example.com/asdf/"
-    comment: "redirect domain to path on same domain"
+    source: "http://www.cord.bible/"
+    target: "https://illuminations.bible/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
   -
-    source: "http://example.com/asdf"
-    target: "http://example.com/asdf2"
-    comment: "redirect path to different path on same domain"
+    source: "http://cord.bible/"
+    target: "https://illuminations.bible/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
   -
-    source: "http://example.com/asdf"
-    target: "https://example.net/asdf"
-    cert: "arn:asdf2asdf2asdf2"
-    comment: "redirect path to path on different domain and protocol"
+    source: "https://www.cord.bible/"
+    target: "https://illuminations.bible/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
+
+    # illuminationsgathering.com > illuminationsgathering.org
+  -
+    source: "https://www.illuminationsgathering.com/*"
+    target: "https://www.illuminationsgathering.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org"
+  -
+    source: "https://illuminationsgathering.com/*"
+    target: "https://www.illuminationsgathering.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org"
+  -
+    source: "http://www.illuminationsgathering.com/*"
+    target: "https://www.illuminationsgathering.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org"
+  -
+    source: "http://illuminationsgathering.com/*"
+    target: "https://www.illuminationsgathering.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org"
+  # ––––––––––––––
+  -
+    source: "http://*illuminationsgathering.org/*"
+    target: "https://www.illuminationsgathering.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org (always use https)"
+  -
+    source: "https://illuminationsgathering.org/*"
+    target: "https://www.illuminationsgathering.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org"
+  -
+    source: "https://illuminationsgathering.org/"
+    target: "https://www.illuminationsgathering.org"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminationsgathering.com > illuminationsgathering.org"
+
+  # illuminations.services > illuminations.bible
+  -
+    source: "http://*.illuminations.services/"
+    target: "https://illuminations.bible"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
+  -
+    source: "http://*.illuminations.services/*"
+    target: "https://illuminations.bible"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
+  -
+    source: "https://illuminations.services/"
+    target: "https://illuminations.bible"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
+  -
+    source: "https://www.illuminations.services/"
+    target: "https://illuminations.bible"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
+  -
+    source: "https://portal.illuminations.services/"
+    target: "https://illuminations.bible"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "cord.bible > illuminations.bible"
+  -
+    source: "https://sildropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/psv2hadk00hq7vp/AAC6lh0ax3ShM0C5SHNBNO3ha?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "sildropbox > dropbox"
+  -
+    source: "https://absdropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/nzjdq3pzso47hwo/AAB-se7GdMD9pknD4fK1oIOMa?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "absdropbox > dropbox"
+  -
+    source: "https://biblicadropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/zzv74z59ogofp30/AADXBF5u0XYjpkZLsTkSwi32a?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "biblicadropbox > dropbox"
+  -
+    source: "https://dbsdropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/hybj75ii61ym0f9/AAD6fcaAKETukikgp6MvomgWa?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "dbsdropbox > dropbox"
+  -
+    source: "https://lbtdropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/xzuxrciqnpj3t1l/AADWQyrdIny3rETQ3ibAO8W4a?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "dbsdropbox > dropbox"
+  -
+    source: "https://pbtdropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/udl4njbjsauo819/AABAyokmy21rE1CW1_RTdcq8a?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "pbtdropbox > dropbox"
+  -
+    source: "https://wftwdropbox.illuminations.services/"
+    target: "https://www.dropbox.com/sh/sjq3iyw8qwa47vl/AACahUFGdFazj1ixT34XH_Kra?dl=0"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "wftwdropbox > dropbox"
+
+  # imaginezero redirects
+  -
+    source: "https://donate.imaginezero.com/"
+    target: "https://seedcompany.com/donate"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "imaginezero > seedcompany.com"
+  -
+    source: "http://kit.imaginezero.com/"
+    target: "https://kit.imaginezero.com/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "kit.imaginezero always use https"
+  # this one was turned off on CloudFlare as of 1/31/20
+  # -
+  #   source: "https://kit.imaginezero.com/"
+  #   target: "https://www.imaginezero.com"
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: "kit.imaginezero > imaginezero"
+  -
+    source: "https://www.imaginezero.com/"
+    target: "https://www.imaginezero.com/kit/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "imaginezero > imaginezero.kit"
+
+  # prayforzero redirects
+  -
+    source: "http://prayforzero.com/*"
+    target: "https://www.prayforzero.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "prayforzero > prayforzero/$1"
+
+  # scprayer redirects
+  -
+    source: "http://scprayer.com/"
+    target: "https://tsco.zoom.us/j/821927561"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "scprayer > tsco.zoom"
+  -
+    source: "https://www.scprayer.com/"
+    target: "https://tsco.zoom.us/j/821927561"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "scprayer > tsco.zoom"
+  -
+    source: "https://scprayer.com/"
+    target: "https://tsco.zoom.us/j/821927561"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "scprayer > tsco.zoom"
+
+  # seedcompany.com redirects
+  -
+    source: "http://fieldtechnology.seedcompany.com/"
+    target: "https://sites.google.com/tsco.org/fieldtechnology"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "fieldtechnology > googlesites"
+  -
+    source: "https://forwordevent.seedcompany.com/*"
+    target: "https://forword.seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "forwordevent/* > forwordevent/$1"
+  -
+    source: "https://forward.seedcompany.com/*"
+    target: "https://forword.seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "forword.sc.com/* > forword.sc.com/$1"
+  -
+    source: "https://forwardevent.seedcompany.com/*"
+    target: "https://forword.seedcompany.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "forwordevent > forword"
+    # ––––––––––––––
+  # -
+  #   source: "https://fieldtechnology.seedcompany.com/*"
+  #   # SSL: Flexible
+  #   target: "https://sites.google.com/tsco.org/fieldtechnology"
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: "fieldtechnology > googlesites"
+  -
+    source: "http://hospitality.seedcompany.com/"
+    target: "https://docs.google.com/forms/d/e/1FAIpQLSeNuXRRNDkjShxekdsm5KC4gSaMEq5lRv_mkz2wJA_iDeBs5Q/viewform"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "insecure hospitality > google docs"
+  -
+    source: "https://hospitality.seedcompany.com/"
+    target: "https://docs.google.com/forms/d/e/1FAIpQLSeNuXRRNDkjShxekdsm5KC4gSaMEq5lRv_mkz2wJA_iDeBs5Q/viewform"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "secure forwordevent > forword"
+  -
+    source: "https://scorecard.seedcompany.com/*"
+    target: "https://www.surveymonkey.com/r/scorecard10"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "scorecard > surveymonkey"
+  -
+    source: "http://helpdesk.seedcompany.com/*"
+    target: "https://helpdesk.seedcompany.com/*"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "helpdesk always use https"
+  -
+    source: "https://helpdesk.seedcompany.com/*"
+    target: "https://seedcompany.freshdesk.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "helpdesk > sc.freshdesk"
+  -
+    source: "https://helpdesk.seedcompany.com/*"
+    target: "https://seedcompany.freshdesk.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "helpdesk > sc.freshdesk"
+  -
+    source: "https://brand.seedcompany.com/"
+    target: "https://seedcompany.canto.com/v/BrandCenter"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "brand.sc > sc.canto"
+  -
+    source: "http://*.seedcompany.com/*"
+    target: "https://*.seedcompany.com/*"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "sc.com always use https"
+  -
+    source: "https://www.seedcompany.com/*"
+    target: "https://seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "sc.com/* > sc.com/$1"
+  -
+    source: "https://seedcompany.com/prayer"
+    target: "https://seedcompany.com/prayer-partner"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "sc.com/prayer > sc.com/prayer-partner"
+  -
+    source: "https://seedcompany.com/pray"
+    target: "https://seedcompany.com/prayer-partner"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "sc.com/pray > sc.com/prayer-partner"
+  # -
+  #   source: "https://images.seedcompany.com/*"
+  #   # Browser Cache TTL: 5 hours, Cache Level: Cache Everything, Edge Cache TTL: 2419200 seconds
+  #   target: ""
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: "sc.com/pray > sc.com/prayer-partner"
+  -
+    source: "https://system*.seedcompany.com/"
+    target: "https://go.theseedcompany.org/systems-migration/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "system.sc.com (https) > go.theseedcompany.org"
+  -
+    source: "http://system*.seedcompany.com/"
+    target: "https://go.theseedcompany.org/systems-migration/"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "system.sc.com (http) > go.theseedcompany.org"
+  # -
+  #   source: "https://domo.seedcompany.com/*"
+  #   # cache level bypass
+  #   target: ""
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: "system.sc.com (http) > go.theseedcompany.org"
+  # -
+  #   source: "https://domo.seedcompany.com/"
+  #   # cache level bypass
+  #   target: ""
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: "system.sc.com (http) > go.theseedcompany.org"
+
+  # seedconnect.com redirects
+  # -
+  #   source: "https://score-stg.seedconnect.com/*"
+  #   # cache level: bypass
+  #   target: ""
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: "fieldtechnology > googlesites"
+  -
+    source: "http://*.seedconnect.com/*"
+    target: "https://*.seedconnect.com/*"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "seedconnect always use https"
+  # -
+    # source: "https://score.seedconnect.com/*"
+    # # Browser Cache TTL: 30 minutes, Cache Level: Bypass, Edge Cache TTL: 2 hours
+    # target: "https://forword.seedcompany.com/$1"
+    # # cert: "arn:asdf2asdf2asdf2"
+    # comment: "forword.sc.com/* > forword.sc.com/$1"
+
+  # seedconnect.org redirects
+  -
+    source: "http://fieldtechnology.seedconnect.org/"
+    target: "https://sites.google.com/tsco.org/fieldtechnology"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "fieldtechnology > google sites"
+  -
+    source: "http://helpdesk.seedconnect.org/*"
+    target: "https://helpdesk.seedconnect.org/*"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "helpdesk always use https"
+  -
+    source: "https://helpdesk.seedconnect.org/*"
+    target: "https://seedcompany.freshdesk.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "helpdesk > sc.freshdesk"
+  -
+    source: "https://reports.seedconnect.org/*"
+    target: "https://seedcompany.domo.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "reports.seedconnect https > sc.domo.com"
+  -
+    source: "http://reports.seedconnect.org/*"
+    target: "https://seedcompany.domo.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "reports.seedconnect http > sc.domo.com"
+  -
+    source: "http://projectrequest.seedconnect.org/*"
+    target: "https://projectrequest.seedconnect.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "projectrequest/* > projectrequest/$1"
+  -
+    source: "https://projects.seedconnect.org/*"
+    target: "https://seedcompany.atlassian.net/login.jsp?os_destination=https%3A%2F%2Fseedcompany.atlassian.net%2Fsecure%2FDashboard.jspa"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "projects.seedconnect/* > sc.atlassian"
+  -
+    source: "http://projects.seedconnect.org/*"
+    target: "https://seedcompany.atlassian.net/login.jsp?os_destination=https%3A%2F%2Fseedcompany.atlassian.net%2Fsecure%2FDashboard.jspa"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "projects.seedconnect/* > sc.atlassian"
+  -
+    source: "http://wiki.seedconnect.org/*"
+    target: "https://wiki.seedconnect.org/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "wiki/* > wiki/$1"
+
+  # theseedcompany.com redirects
+  -
+    source: "http://theseedcompany.com/*"
+    target: "https://theseedcompany.com/*"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.com always use https"
+  -
+    source: "https://theseedcompany.com/*"
+    target: "https://seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.com/* https > sc.com/$1"
+  -
+    source: "http://*.theseedcompany.com/*"
+    target: "https://seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.com/* http > sc.com/$1"
+
+# theseedcompany.com redirects
+  -
+    source: "https://www.theseedcompany.org/*"
+    target: "https://seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.com > sc.com"
+  -
+    source: "https://theseedcompany.org/*"
+    target: "https://seedcompany.com/$1"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.org/* https > sc.com/$1"
+  -
+    source: "https://theseedcompany.org/prayforzero*"
+    target: "https://form.jotform.com/72887075327164"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.org/prayforzero https > form.jotform"
+  -
+    source: "http://theseedcompany.org/prayforzero*"
+    target: "https://form.jotform.com/72887075327164"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "theseedcompany.org/prayforzero http > form.jotform"
+  -
+    source: "https://stratmark.theseedcompany.org/"
+    target: "https://theseedcompany.org"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "stratmark.theseedcompany.org > theseedcompany.org"
+  -
+    source: "https://illuminations.theseedcompany.org/"
+    target: "https://theseedcompany.org"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "illuminations.theseedcompany.org > theseedcompany.org"
+  -
+    source: "https://blog.theseedcompany.org/"
+    target: "https://theseedcompany.org"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "blog.theseedcompany.org > theseedcompany.org"
+  # -
+  #   source: "https://theseedcompany.org/were-hiring"
+  #   # cache level: bypass
+  #   target: ""
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: ""
+  # -
+  #   source: "https://theseedcompany.org/forword-admin"
+  #   # cache level: bypass
+  #   target: ""
+  #   # cert: "arn:asdf2asdf2asdf2"
+  #   comment: ""
+
+  # tsco.org redirects
+  -
+    source: "fieldtechnology.tsco.org/"
+    target: "https://sites.google.com/tsco.org/fieldtechnology"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "fieldtechnology.tsco.org > google sites"
+  -
+    source: "www.tsco.org/"
+    target: "https://www.seedcompany.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "tsco.org no protocol > sc.com"
+  -
+    source: "https://www.tsco.org/"
+    target: "https://www.seedcompany.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "tsco.org https > sc.com"
+  -
+    source: "tsco.org/"
+    target: "https://www.seedcompany.com"
+    # cert: "arn:asdf2asdf2asdf2"
+    comment: "tsco.org no protocol no www > sc.com"

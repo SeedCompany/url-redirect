@@ -1,0 +1,15 @@
+{
+  "availability-zones:account=427932013395:region=us-east-2": [
+    "us-east-2a",
+    "us-east-2b",
+    "us-east-2c"
+  ],
+  "hosted-zone:account=427932013395:domainName=zaseco.com:region=us-east-2": {
+    "Id": "/hostedzone/ZAOOHF4LFQVG6",
+    "Name": "zaseco.com."
+  },
+  "hosted-zone:account=427932013395:domainName=seeddev2.com:region=us-east-2": {
+    "Id": "/hostedzone/Z24A7XVLP1IA1A",
+    "Name": "seeddev2.com."
+  }
+}
